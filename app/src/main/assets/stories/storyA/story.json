@@ -1,0 +1,140 @@
+[
+  {
+    "id": "node1",
+    "nextId": "node2",
+    "content": {
+      "text": "Welcome"
+    }
+  },
+  {
+    "id": "node2",
+    "nextId": "",
+    "content": {
+      "text": "Are you..."
+    },
+    "nodes": [
+      {
+        "id": "choiceElf",
+        "nextId": "node3",
+        "consequences": "race=elf",
+        "content": {
+          "text": "an elf?"
+        }
+      },
+      {
+        "id": "choiceDwarf",
+        "nextId": "node4",
+        "consequences": "race=dwarf",
+        "content": {
+          "text": "a dwarf?"
+        }
+      },
+      {
+        "id": "choiceHuman",
+        "nextId": "node5",
+        "consequences": "race=human",
+        "content": {
+          "text": "a human?"
+        }
+      }
+    ]
+  },
+  {
+    "id": "node3",
+    "nextId": "node6",
+    "content": {
+      "text": "Oh, you're an elf..."
+    }
+  },
+  {
+    "id": "node4",
+    "nextId": "node6",
+    "content": {
+      "text": "It's a pleasure to meet one of little people."
+    }
+  },
+  {
+    "id": "node5",
+    "nextId": "node6",
+    "content": {
+      "text": "Compatriot!"
+    }
+  },
+  {
+    "id": "node6",
+    "nextId": "node7",
+    "content": {
+      "text": "Another question."
+    }
+  },
+  {
+    "id": "node7",
+    "nextId": "",
+    "content": {
+      "text": "Are you a man or a woman ?"
+    },
+    "nodes": [
+      {
+        "id": "choiceReally",
+        "nextId": "node8",
+        "content": {
+          "text": "Really..."
+        }
+      },
+      {
+        "id": "choiceMan",
+        "nextId": "node8",
+        "content": {
+          "text": "A real man!"
+        }
+      },
+      {
+        "id": "choiceWoman",
+        "nextId": "node8",
+        "content": {
+          "text": "A real women!"
+        }
+      }
+    ]
+  },
+  {
+    "id": "node8",
+    "type": "storyCrossroads",
+    "nextId": "",
+    "content": {},
+    "nodes": [
+      {
+        "id": "caseHuman",
+        "nextId": "",
+        "conditions": "race=human",
+        "content": {
+          "text": "Goodbye, human."
+        }
+      },
+      {
+        "id": "caseElf",
+        "nextId": "",
+        "conditions": "race=elf",
+        "content": {
+          "text": "Au Goodbye, elf."
+        }
+      },
+      {
+        "id": "caseNain",
+        "nextId": "",
+        "conditions": "race=dwarf",
+        "content": {
+          "text": "Goodbye, dwarf."
+        }
+      },
+      {
+        "id": "caseError",
+        "nextId": "",
+        "conditions": "",
+        "content": {
+          "text": "Error, error"
+        }
+      }
+    ]
+  }
+]
